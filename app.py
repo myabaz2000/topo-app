@@ -230,11 +230,11 @@ with col1:
 
 with col2:
     st.header("📊 تتبع الملفات والوضعية المالية")
-    filter_option = st.radio("تصفية التصاميم حسب حالة التسليم:", ["عرض الكل", "التصاميم المسلمة فقط", "التصاميم غير المسلمة فقط"], horizontal=True)
+    filter_option = st.radio("تصفية التصاميم حسب حالة التسليم:", ["عرض الكل", "التصاميم المسلمة", "التصاميم غير المسلمة"], horizontal=True)
     
-    if filter_option == "التصاميم المسلمة فقط":
+    if filter_option == "التصاميم المسلمة ":
         filtered_list = [p for p in projects_list if p['delivered'] == 1]
-    elif filter_option == "التصاميم غير المسلمة فقط":
+    elif filter_option == "التصاميم غير المسلمة ":
         filtered_list = [p for p in projects_list if p['delivered'] == 0]
     else:
         filtered_list = projects_list
