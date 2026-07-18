@@ -267,8 +267,8 @@ with col2:
                         update_delivery(p['id'], today_str)
                         st.rerun()
                         
-        with sub_col2:
-        if reste > 0:
+            with sub_col2:
+            if reste > 0:
             # خانة إضافة تسديد تاخذ عرض العمود بالكامل
             add_pay = st.number_input(f"إضافة تسديد", min_value=0.0, max_value=reste, step=100.0, key=f"pay_input_{p['id']}", use_container_width=True)
             
