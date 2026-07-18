@@ -267,8 +267,8 @@ with col2:
                         update_delivery(p['id'], today_str)
                         st.rerun()
                         
-            with sub_col2:
-            if reste > 0:
+             with sub_col2:
+             if reste > 0:
             # خانة إضافة تسديد تاخذ عرض العمود بالكامل
             add_pay = st.number_input(f"إضافة تسديد", min_value=0.0, max_value=reste, step=100.0, key=f"pay_input_{p['id']}", use_container_width=True)
             
@@ -277,17 +277,17 @@ with col2:
             # إنشاء 3 أعمدة صغيرة ومتقايسة داخل نفس القسم لتصفيف الأزرار جنباً إلى جنب
             btn_col1, btn_col2, btn_col3 = st.columns(3)
             
-            with btn_col1:
+             with btn_col1:
                 if st.button(f"تحديث 💵", key=f"pay_btn_{p['id']}", use_container_width=True):
                     update_payment(p['id'], p['paid'] + add_pay)
                     st.rerun()
                     
-            with btn_col2:
+             with btn_col2:
                 if st.button(f"تعديل ✏️", key=f"edit_btn_{p['id']}", use_container_width=True):
                     st.session_state.edit_project_id = p['id']
                     st.rerun()
                     
-            with btn_col3:
+             with btn_col3:
                 if st.button(f"حذف 🗑️", key=f"delete_btn_{p['id']}", use_container_width=True):
                     delete_project(p['id'])
                     st.rerun()
